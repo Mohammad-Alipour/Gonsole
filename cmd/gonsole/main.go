@@ -1,17 +1,15 @@
 package main
 
 import (
-	"fmt"
-	"os"
+	"log"
 
+	"github.com/Mohammad-Alipour/Gonsole/internal/editor"
 	tea "github.com/charmbracelet/bubbletea"
-	"github.com/mohammadalipour/gonsole/internal/editor"
 )
 
 func main() {
-	prog := tea.NewProgram(editor.New())
-	if err := prog.Start(); err != nil {
-		fmt.Println("Error:", err)
-		os.Exit(1)
+	p := tea.NewProgram(editor.New(), tea.WithAltScreen())
+	if _, err := p.Run(); err != nil {
+		log.Fatal(err)
 	}
 }
