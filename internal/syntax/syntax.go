@@ -128,5 +128,3 @@ func highlightRegex(line, pattern string, style lipgloss.Style) string {
 		return style.Render(s)
 	})
 }
-
-//syntax
